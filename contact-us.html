@@ -34,6 +34,7 @@
 
     <style></style>
   </head>
+
   <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg sticky-top">
@@ -195,7 +196,12 @@
                   >Keep me Signed in</label
                 >
               </div>
-              <button type="button" class="btn btn-secondary signin-btn mb-24">
+              <button
+                id="btn"
+                type="button"
+                class="btn btn-secondary signin-btn mb-24"
+                onclick="changeButtonDesc()"
+              >
                 Sign in
               </button>
               <button type="button" class="btn btn-light signup-btn mb-24">
@@ -277,15 +283,18 @@
         </form>
 
         <script>
+          //On-Click DOM
           document.getElementById("send").onclick = () => {
             alert("Thank you for Contact Us !!!");
           };
 
+          //On-Load DOM
           setTimeout(() => {
             document.getElementsByTagName("h1")[0].innerHTML =
               "Contact Sokunime";
           }, 3000);
 
+          //On-Click by Element (P) InnerHTML
           let p = document.getElementsByTagName("p")[0];
           p.onclick = () => {
             p.innerHTML =
@@ -293,6 +302,16 @@
                 ? "Please leave your message in the column provided on the right."
                 : "Please leave your message in the column provided.";
           };
+
+          //On-Click Change Button Description
+          function changeButtonDesc() {
+            let btnElement = document.getElementById("btn");
+            if (btnElement.innerHTML == "Sign in") {
+              btnElement.innerHTML = "Sign Out";
+            } else {
+              btnElement.innerHTML = "Sign in";
+            }
+          }
         </script>
       </div>
     </div>
