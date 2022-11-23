@@ -240,7 +240,7 @@
       </div>
 
       <div class="col peding-30">
-        <form method="post" action="">
+        <form method="" action="">
           <div class="form-group">
             <label style="margin-top: 10px">Name :</label>
             <input
@@ -271,24 +271,29 @@
             ></textarea>
           </div>
 
-          <input
-            id="send"
-            class="btn btn-secondary"
-            type="submit"
-            value="SEND"
-            style="margin-top: 15px"
-          />
-          <script>
-            document.getElementById("send").onclick = () => {
-              alert("Thank you for Contact Us !!!");
-            };
-
-            setTimeout(() => {
-              document.getElementsByTagName("h1")[0].innerHTML =
-                "Contact Sokunime";
-            }, 3000);
-          </script>
+          <button id="send" class="btn btn-secondary" style="margin-top: 15px">
+            SEND
+          </button>
         </form>
+
+        <script>
+          document.getElementById("send").onclick = () => {
+            alert("Thank you for Contact Us !!!");
+          };
+
+          setTimeout(() => {
+            document.getElementsByTagName("h1")[0].innerHTML =
+              "Contact Sokunime";
+          }, 3000);
+
+          let p = document.getElementsByTagName("p")[0];
+          p.onclick = () => {
+            p.innerHTML =
+              p.innerHTML == "Please leave your message in the column provided."
+                ? "Please leave your message in the column provided on the right."
+                : "Please leave your message in the column provided.";
+          };
+        </script>
       </div>
     </div>
   </div>
